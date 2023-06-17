@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Assignment chapter 56 to 76</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- QUESTION 1  -->
+    <div>
+        <h1>DOM</h1>
+        <div id="form-content" class="content">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" />
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" />
+          <label for="email">Email</label>
+          <input type="text" id="email" />
+        </div>
+        <div id="main-content" class="content">
+          <p class="render">First Name : Alex</p>
+          <p class="render" id="lastName">Last Name: Bank</p>
+          <p class="render">Email : alexbank@example.com</p>
+          <p class="render">Country : Pakistan</p>
+          <p class="render">Contact : +92 300 1234567</p>
+        </div>
+      </div>
+
+
+
+    <!-- QUESTION 2  -->
+    <div id="main-content">
+        <div id="form-content" class="content">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" />
+        </div>
+        <div class="content">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+        </div>
+      </div>
+  
+
+
+
+<script>
+//   QUESTION 1 
+  // i. Get element of id "main-content" and assign them to a variable.
+  const mainContent = document.getElementById("main-content");
+
+// ii. Display all child elements of "main-content" element.
+const mainContentChildren = mainContent.children;
+console.log("Child elements of 'main-content':", mainContentChildren);
+
+// iii. Get all elements of class "render" and show their innerHTML in the browser.
+const renderElements = document.getElementsByClassName("render");
+for (let i = 0; i < renderElements.length; i++) {
+  console.log("innerHTML of render element:", renderElements[i].innerHTML);
+}
+
+// iv. Fill the input value of the element with id "first-name" using JavaScript.
+const firstNameInput = document.getElementById("first-name");
+firstNameInput.value = "John";
+
+// v. Repeat part iv for id "last-name" and "email".
+const lastNameInput = document.getElementById("last-name");
+lastNameInput.value = "Doe";
+
+const emailInput = document.getElementById("email");
+emailInput.value = "johndoe@example.com";
+
+
+//   QUESTION 2 
+ // i. What is the node type of the element with id "form-content"?
+ const formContent = document.getElementById("form-content");
+      const formContentType = formContent.nodeType;
+      console.log("Node type of element with id 'form-content':", formContentType);
+
+      // ii. Show the node type of the element with id "lastName" and its child node.
+      const lastName = document.getElementById("lastName");
+      const lastNameType = lastName.nodeType;
+      const lastNameChildNodeType = lastName.childNodes[0].nodeType;
+      console.log("Node type of element with id 'lastName':", lastNameType);
+      console.log("Node type of its child node:", lastNameChildNodeType);
+
+      // iii. Update the child node of the element with id "lastName".
+      const newChildNode = document.createTextNode("New Last Name");
+      lastName.replaceChild(newChildNode, lastName.childNodes[0]);
+
+      // iv. Get the first and last child of the element with id "main-content".
+      const mainContent2 = document.getElementById("main-content");
+      const firstChild = mainContent.firstChild;
+      const lastChild = mainContent.lastChild;
+      console.log("First child of id 'main-content':", firstChild);
+      console.log("Last child of id 'main-content':", lastChild);
+
+      // v. Get the next and previous siblings of the element with id "lastName".
+      const lastNameNextSibling = lastName.nextSibling;
+      const lastNamePreviousSibling = lastName.previousSibling;
+      console.log("Next sibling of id 'lastName':", lastNameNextSibling);
+      console.log("Previous sibling of id 'lastName':", lastNamePreviousSibling);
+
+      // vi. Get the parent node and node type of the element with id "email".
+      const email = document.getElementById("email");
+      const emailParentNode = email.parentNode;
+      const emailParentNodeType = emailParentNode.nodeType;
+      console.log("Parent node of id 'email':", emailParentNode);
+      console.log("Node type of parent node:", emailParentNodeType);
+
+
+
+    </script>
+
+
+</body>
+</html>
